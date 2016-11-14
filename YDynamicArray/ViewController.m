@@ -29,6 +29,12 @@
     } count:100];
     NSLog(@"第50个元素是---%@",modelArray[50]);
     
+    // 可以表达为f(x)的数组惰性计算
+    NSArray *fArray = [[YFFDynamicArray alloc] initWithItemBlock:^id(NSUInteger index) {
+        return [NSString stringWithFormat:@"%ld块钱",index];
+    } count:10000];
+    NSLog(@"第1000个元素--->%@",fArray[1000]);
+    
     
 }
 
