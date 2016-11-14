@@ -24,6 +24,10 @@
     
     NSLog(@"打印第1000个元素---%@",array[1000]);
     // 惰性计算的例子
+    NSArray *modelArray = [[YFFDynamicArray alloc] initWithItemBlock:^id(NSUInteger index) {
+        return @(index * 2);
+    } count:100];
+    NSLog(@"第50个元素是---%@",modelArray[50]);
     
     
 }
